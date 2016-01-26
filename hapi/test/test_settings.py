@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import random
 import unittest2
 
@@ -29,7 +31,7 @@ class SettingsClientTest(unittest2.TestCase):
         settings = self.client.get_settings()
         self.assertTrue(len(settings))
         
-        print "\n\nGot some settings: %s" % json.dumps(settings)
+        print("\n\nGot some settings: %s" % json.dumps(settings)))
 
     @attr('api')
     def test_get_setting(self):
@@ -38,7 +40,7 @@ class SettingsClientTest(unittest2.TestCase):
         settings = self.client.get_setting(name)
         self.assertTrue(len(settings))
 
-        print "\n\nGot a specific setting: %s, giving %s" % (name, json.dumps(settings));
+        print("\n\nGot a specific setting: %s, giving %s" % (name, json.dumps(settings)))
 
     @attr('api')
     def test_add_setting(self):        
@@ -47,7 +49,7 @@ class SettingsClientTest(unittest2.TestCase):
         result = self.client.update_setting(data)
         # This is just a 201 response (or 500), no contents.
         
-        print "\n\nUpdated setting: %s." % data['name']
+        print("\n\nUpdated setting: %s." % data['name'])
     
     @attr('api')
     def test_delete_setting(self):
@@ -56,7 +58,7 @@ class SettingsClientTest(unittest2.TestCase):
         settings = self.client.delete_setting(name)
         # This is just a 201 response (or 500), no contents.
 
-        print "\n\nDeleted setting: %s." % name
+        print("\n\nDeleted setting: %s." % name)
 
 if __name__ == "__main__":
     unittest2.main()

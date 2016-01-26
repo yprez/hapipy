@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 from collections import defaultdict
 import unittest2
 import simplejson as json
@@ -46,7 +48,7 @@ class BaseTest(unittest2.TestCase):
         # so duplicate=key&duplicate=value
         doseq = True
         url, headers, data = self.client._prepare_request(subpath, params, data, opts, doseq)
-        print url
+        print(url)
         self.assertTrue('duplicate=key&duplicate=' in url)
         
     def test_call(self):

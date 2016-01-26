@@ -1,4 +1,3 @@
-
 from hapi.error import HapiError, EmptyResult
 
 from nose.tools import ok_
